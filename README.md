@@ -8,14 +8,39 @@
 2. **可解释**：每个项目都说明输入、命令、输出和结果含义。
 3. **诚实呈现**：教学数据与真实公开数据会明确区分，不把模拟结果包装成科研发现。
 
+## 最新展示结果
+
+RNA-seq demo 已补充完整的差异表达分析、样本质量检查、可视化和结果解读。当前使用小型模拟数据，重点展示分析思路、代码组织和结果解释能力。
+
+| 输出 | 能说明什么 |
+|---|---|
+| PCA | 检查样本是否按实验条件分开 |
+| 火山图 | 同时展示差异倍数和统计显著性 |
+| Top genes 热图 | 检查代表性基因能否区分处理组 |
+| 样本相关性热图 | 检查生物学重复之间是否更相似 |
+| 文库大小图 | 检查样本测序深度是否可比 |
+| 富集柱状图 | 演示 DEG 到功能集合的过度富集分析 |
+
+![RNA-seq PCA](02_rnaseq_deg_demo/figures/pca.svg)
+
+![RNA-seq volcano plot](02_rnaseq_deg_demo/figures/volcano_plot.svg)
+
 ## 项目概览
 
 | 项目 | 展示能力 | 主要产出 |
 |---|---|---|
 | [01_linux_practice](01_linux_practice/) | Linux 文件操作、文本处理、Shell 脚本 | 筛选表、排序表、统计摘要 |
-| [02_rnaseq_deg_demo](02_rnaseq_deg_demo/) | R、DESeq2、差异表达、PCA、火山图、热图、富集分析 | DEG 表和分析图 |
+| [02_rnaseq_deg_demo](02_rnaseq_deg_demo/) | R、DESeq2、差异表达、样本 QC、PCA、火山图、热图、富集分析 | DEG 表、QC 图、分析图、结果解读报告 |
 | [03_nac20_literature_mining](03_nac20_literature_mining/) | PubMed 检索、文献元数据整理、关键词统计 | 文献表、年份统计、关键词图 |
 | [04_go_enrichment_visualization](04_go_enrichment_visualization/) | R 数据清洗、GO 富集结果筛选、发表级可视化 | GO 气泡图、入图数据表 |
+
+## 这个作品集想展示的能力
+
+- 能把输入数据、脚本、结果表和图片组织成清晰的可复现项目。
+- 能在差异表达前检查样本信息、测序深度和样本间相关性，而不是只运行一个黑箱软件。
+- 能解释 log2 fold change、adjusted p-value、PCA、热图和富集分析各自回答的问题。
+- 能识别模拟数据和真实生物学结论之间的边界，不夸大结果。
+- 能把分析结果写成老师容易检查的 Markdown 报告和图表。
 
 ## 仓库结构
 
@@ -31,7 +56,8 @@ bioinformatics-portfolio/
 │   └── install_r_packages.R
 ├── 01_linux_practice/
 ├── 02_rnaseq_deg_demo/
-└── 03_nac20_literature_mining/
+├── 03_nac20_literature_mining/
+└── 04_go_enrichment_visualization/
 ```
 
 每个项目内部尽量采用相同结构：
@@ -52,7 +78,7 @@ bioinformatics-portfolio/
 - Bash
 - R 4.2 或更高版本
 - Python 3（仅文献下载脚本需要）
-- R 包：`DESeq2`、`ggplot2`、`pheatmap`
+- R 包：`DESeq2`、`ggplot2`、`pheatmap`、`dplyr`、`stringr`、`scales`
 
 先进入仓库：
 
@@ -85,6 +111,8 @@ bash scripts/01_text_processing.sh
 cd ../02_rnaseq_deg_demo
 Rscript scripts/01_deseq2_analysis.R
 Rscript scripts/02_enrichment_demo.R
+Rscript scripts/03_qc_and_summary.R
+Rscript scripts/04_make_github_svg_figures.R
 
 # 3. NAC20 文献统计
 cd ../03_nac20_literature_mining

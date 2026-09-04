@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img">
+<rect width="100%" height="100%" fill="white" />
+<style>text { font-family: Arial, Helvetica, sans-serif; }</style>
+<text x="450.00" y="38.00" text-anchor="middle" font-size="24" font-weight="700" fill="#222222">DESeq2 differential expression</text>
+<line x1="42.76" y1="75.00" x2="42.76" y2="485.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="42.76" y="513.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">-6.0</text>
+<line x1="162.79" y1="75.00" x2="162.79" y2="485.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="162.79" y="513.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">-4.0</text>
+<line x1="282.82" y1="75.00" x2="282.82" y2="485.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="282.82" y="513.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">-2.0</text>
+<line x1="402.85" y1="75.00" x2="402.85" y2="485.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="402.85" y="513.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">0.0</text>
+<line x1="522.88" y1="75.00" x2="522.88" y2="485.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="522.88" y="513.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">2.0</text>
+<line x1="642.91" y1="75.00" x2="642.91" y2="485.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="642.91" y="513.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">4.0</text>
+<line x1="762.94" y1="75.00" x2="762.94" y2="485.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="762.94" y="513.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">6.0</text>
+<line x1="90.00" y1="485.00" x2="710.00" y2="485.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="76.00" y="489.00" text-anchor="end" font-size="12" font-weight="400" fill="#222222">0</text>
+<line x1="90.00" y1="420.58" x2="710.00" y2="420.58" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="76.00" y="424.58" text-anchor="end" font-size="12" font-weight="400" fill="#222222">50</text>
+<line x1="90.00" y1="356.16" x2="710.00" y2="356.16" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="76.00" y="360.16" text-anchor="end" font-size="12" font-weight="400" fill="#222222">100</text>
+<line x1="90.00" y1="291.73" x2="710.00" y2="291.73" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="76.00" y="295.73" text-anchor="end" font-size="12" font-weight="400" fill="#222222">150</text>
+<line x1="90.00" y1="227.31" x2="710.00" y2="227.31" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="76.00" y="231.31" text-anchor="end" font-size="12" font-weight="400" fill="#222222">200</text>
+<line x1="90.00" y1="162.89" x2="710.00" y2="162.89" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="76.00" y="166.89" text-anchor="end" font-size="12" font-weight="400" fill="#222222">250</text>
+<line x1="90.00" y1="98.47" x2="710.00" y2="98.47" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="76.00" y="102.47" text-anchor="end" font-size="12" font-weight="400" fill="#222222">300</text>
+<line x1="90.00" y1="34.04" x2="710.00" y2="34.04" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="76.00" y="38.04" text-anchor="end" font-size="12" font-weight="400" fill="#222222">350</text>
+<line x1="342.84" y1="75.00" x2="342.84" y2="485.00" stroke="#777777" stroke-width="1.40" stroke-dasharray="6 6" />
+<line x1="462.87" y1="75.00" x2="462.87" y2="485.00" stroke="#777777" stroke-width="1.40" stroke-dasharray="6 6" />
+<line x1="90.00" y1="483.32" x2="710.00" y2="483.32" stroke="#777777" stroke-width="1.40" stroke-dasharray="6 6" />
+<circle cx="614.10" cy="105.37" r="5.00" fill="#E41A1C" stroke="#E41A1C" stroke-width="1.5" opacity="0.82" />
+<circle cx="579.97" cy="157.61" r="5.00" fill="#E41A1C" stroke="#E41A1C" stroke-width="1.5" opacity="0.82" />
+<circle cx="141.67" cy="181.46" r="5.00" fill="#377EB8" stroke="#377EB8" stroke-width="1.5" opacity="0.82" />
+<circle cx="633.72" cy="215.71" r="5.00" fill="#E41A1C" stroke="#E41A1C" stroke-width="1.5" opacity="0.82" />
+<circle cx="215.16" cy="216.13" r="5.00" fill="#377EB8" stroke="#377EB8" stroke-width="1.5" opacity="0.82" />
+<circle cx="167.66" cy="279.26" r="5.00" fill="#377EB8" stroke="#377EB8" stroke-width="1.5" opacity="0.82" />
+<circle cx="584.36" cy="282.77" r="5.00" fill="#E41A1C" stroke="#E41A1C" stroke-width="1.5" opacity="0.82" />
+<circle cx="221.41" cy="305.21" r="5.00" fill="#377EB8" stroke="#377EB8" stroke-width="1.5" opacity="0.82" />
+<circle cx="617.22" cy="310.93" r="5.00" fill="#E41A1C" stroke="#E41A1C" stroke-width="1.5" opacity="0.82" />
+<circle cx="658.33" cy="340.06" r="5.00" fill="#E41A1C" stroke="#E41A1C" stroke-width="1.5" opacity="0.82" />
+<circle cx="624.22" cy="357.90" r="5.00" fill="#E41A1C" stroke="#E41A1C" stroke-width="1.5" opacity="0.82" />
+<circle cx="191.75" cy="358.73" r="5.00" fill="#377EB8" stroke="#377EB8" stroke-width="1.5" opacity="0.82" />
+<circle cx="213.63" cy="374.88" r="5.00" fill="#377EB8" stroke="#377EB8" stroke-width="1.5" opacity="0.82" />
+<circle cx="640.92" cy="386.14" r="5.00" fill="#E41A1C" stroke="#E41A1C" stroke-width="1.5" opacity="0.82" />
+<circle cx="211.13" cy="407.40" r="5.00" fill="#377EB8" stroke="#377EB8" stroke-width="1.5" opacity="0.82" />
+<circle cx="399.11" cy="484.92" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="399.84" cy="484.98" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="411.61" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="398.64" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="398.98" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="406.40" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="406.21" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="405.55" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="400.58" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="400.67" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="401.08" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="401.15" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="404.30" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="401.55" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="401.56" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="403.99" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="401.76" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="403.51" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="403.12" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="402.69" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<circle cx="402.74" cy="484.99" r="5.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="0.82" />
+<rect x="90.00" y="75.00" width="620.00" height="410.00" fill="none" stroke="#333333" stroke-width="1.50" />
+<text x="400.00" y="540.00" text-anchor="middle" font-size="16" font-weight="400" fill="#222222">log2 fold change: stress / control</text>
+<text x="24.00" y="280.00" text-anchor="middle" font-size="16" font-weight="400" fill="#222222" transform="rotate(-90 24.00 280.00)">-log10 adjusted p-value</text>
+<text x="745.00" y="150.00" text-anchor="start" font-size="16" font-weight="700" fill="#222222">Status</text>
+<circle cx="755.00" cy="175.00" r="6.00" fill="#377EB8" stroke="#377EB8" stroke-width="1.5" opacity="1.00" />
+<text x="771.00" y="180.00" text-anchor="start" font-size="14" font-weight="400" fill="#222222">Down</text>
+<circle cx="755.00" cy="205.00" r="6.00" fill="#BDBDBD" stroke="#BDBDBD" stroke-width="1.5" opacity="1.00" />
+<text x="771.00" y="210.00" text-anchor="start" font-size="14" font-weight="400" fill="#222222">Not significant</text>
+<circle cx="755.00" cy="235.00" r="6.00" fill="#E41A1C" stroke="#E41A1C" stroke-width="1.5" opacity="1.00" />
+<text x="771.00" y="240.00" text-anchor="start" font-size="14" font-weight="400" fill="#222222">Up</text>
+</svg>
