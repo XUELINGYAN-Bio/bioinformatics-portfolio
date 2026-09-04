@@ -1,7 +1,13 @@
 #!/usr/bin/env Rscript
 
 # CRAN 包使用 install.packages() 安装。
-cran_packages <- c("ggplot2", "pheatmap")
+cran_packages <- c(
+  "ggplot2",
+  "pheatmap",
+  "dplyr",
+  "stringr",
+  "scales"
+)
 missing_cran <- cran_packages[
   !vapply(cran_packages, requireNamespace, logical(1), quietly = TRUE)
 ]
@@ -20,4 +26,3 @@ if (!requireNamespace("DESeq2", quietly = TRUE)) {
 }
 
 cat("R package setup finished.\n")
-

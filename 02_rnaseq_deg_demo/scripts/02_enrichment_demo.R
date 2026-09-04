@@ -121,4 +121,3 @@ if (nrow(plot_data) > 0) {
 
 cat("Enrichment demo finished.\n")
 cat("Important: gene sets are simulated and results are not biological claims.\n")
-

@@ -28,3 +28,7 @@ __pycache__/
 *.tmp
 *.log
 tmp/
+Rplots.pdf
+
+# Generated RNA-seq PNG previews; SVG figures are kept for GitHub display
+02_rnaseq_deg_demo/figures/*.png

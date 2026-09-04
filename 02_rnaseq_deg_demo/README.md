@@ -9,6 +9,7 @@
 3. 使用 PCA 检查样本整体关系。
 4. 输出差异表达基因表、火山图和热图。
 5. 使用教学用基因集演示过度富集分析。
+6. 补充文库大小、样本相关性和 Markdown 结果解读报告。
 
 项目重点是理解分析逻辑和文件之间的关系，不是从模拟数据中提出真实生物学结论。
 
@@ -43,6 +44,8 @@ data/
 ## 为什么使用 DESeq2
 
 RNA-seq counts 不是连续正态数据。DESeq2 使用负二项分布建模，并估计样本大小因子和基因离散度，比直接对原始 counts 做普通 t 检验更符合 RNA-seq 数据特点。
+
+说明：本项目的数据是小型模拟数据，重复之间的差异被设计得比较整齐。运行时如果 DESeq2 的标准离散度曲线拟合失败，脚本会自动改用 gene-wise dispersion 估计继续完成教学分析；这适合本示例的可复现演示，但真实项目应优先使用完整数据和标准 DESeq2 流程。
 
 ## 分析流程
 
@@ -98,6 +101,27 @@ Rscript scripts/02_enrichment_demo.R
 
 注意：`gene_sets.csv` 是模拟注释。正式项目应换成目标物种的 GO、KEGG 或其他可靠注释。
 
+### 第五步：生成 QC 图和结果摘要
+
+```bash
+Rscript scripts/03_qc_and_summary.R
+```
+
+这个脚本会读取前两步生成的差异表达和富集结果，进一步输出：
+
+- 文库大小图：检查每个样本的总 count 是否可比。
+- 样本相关性热图：检查同组重复是否更相似。
+- Top DEG 表：方便快速查看最显著的候选基因。
+- Markdown 结果摘要：把核心发现、局限性和下一步写成可阅读报告。
+
+### 第六步：生成 GitHub 预览用 SVG 图
+
+```bash
+Rscript scripts/04_make_github_svg_figures.R
+```
+
+这个脚本从结果表中生成轻量 SVG 图。SVG 是文本格式，适合在 GitHub README 中直接展示，也便于通过版本管理查看变化。
+
 ## 关键结果如何理解
 
 ### log2FoldChange
@@ -132,16 +156,27 @@ PCA 将所有基因的表达信息压缩到少数坐标轴：
 ```text
 results/
 ├── all_deseq2_results.csv
+├── analysis_summary.md
 ├── deg_results.csv
 ├── enrichment_results.csv
 ├── normalized_counts.csv
-└── session_info.txt
+├── sample_correlation_matrix.csv
+├── session_info.txt
+└── top_degs_for_review.csv
 
 figures/
 ├── enrichment_barplot.png
+├── enrichment_barplot.svg
+├── library_size_barplot.png
+├── library_size_barplot.svg
 ├── pca.png
+├── pca.svg
+├── sample_correlation_heatmap.png
+├── sample_correlation_heatmap.svg
 ├── top_genes_heatmap.png
-└── volcano_plot.png
+├── top_genes_heatmap.svg
+├── volcano_plot.png
+└── volcano_plot.svg
 ```
 
 预期现象：
@@ -153,6 +188,26 @@ figures/
 - 模拟的 `Stress_response` 等功能集合可能出现富集。
 
 这些现象来自预先设计的小型数据，只能说明代码流程正常。
+
+## 当前结果速览
+
+本仓库已运行完整流程，当前输出显示：
+
+- 共测试 36 个模拟基因。
+- 使用 `padj < 0.05` 且 `|log2FoldChange| >= 1` 得到 15 个教学用 DEG。
+- stress 组上调基因 8 个，下调基因 7 个。
+- 教学用富集结果中，`Stress_response` 和 `Photosynthesis` 排名最靠前。
+- PCA 和样本相关性热图均显示 control 与 stress 两组可以被明显区分。
+
+代表性图片：
+
+![PCA of variance-stabilized counts](figures/pca.svg)
+
+![DESeq2 volcano plot](figures/volcano_plot.svg)
+
+![Sample-to-sample correlation](figures/sample_correlation_heatmap.svg)
+
+![Teaching gene-set enrichment](figures/enrichment_barplot.svg)
 
 ## 我学到了什么
 
@@ -174,4 +229,3 @@ figures/
 - 独立实验验证
 
 下一步可选择一个公开植物 RNA-seq 数据集，把 `counts.csv` 和 `metadata.csv` 替换为真实数据，并在 README 中记录 GEO/SRA accession、实验设计和论文来源。
-

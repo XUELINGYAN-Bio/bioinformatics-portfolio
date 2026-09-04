@@ -4,7 +4,14 @@
 
 cat("R version:", R.version.string, "\n\n")
 
-required_packages <- c("DESeq2", "ggplot2", "pheatmap")
+required_packages <- c(
+  "DESeq2",
+  "ggplot2",
+  "pheatmap",
+  "dplyr",
+  "stringr",
+  "scales"
+)
 
 for (package_name in required_packages) {
   installed <- requireNamespace(package_name, quietly = TRUE)
@@ -14,4 +21,3 @@ for (package_name in required_packages) {
 
 cat("\n如果出现 MISSING，请运行：\n")
 cat("Rscript setup/install_r_packages.R\n")
-
