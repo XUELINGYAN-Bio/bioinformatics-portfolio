@@ -8,8 +8,8 @@
 2. 使用 DESeq2 进行标准化和差异表达分析。
 3. 使用 PCA 检查样本整体关系。
 4. 输出差异表达基因表、火山图和热图。
-5. 使用教学用基因集演示过度富集分析。
-6. 补充文库大小、样本相关性和 Markdown 结果解读报告。
+5. 补充样本相关性检查和 Markdown 结果解读报告。
+6. 使用教学用基因集初步理解后续功能解释。
 
 项目重点是理解分析逻辑和文件之间的关系，不是从模拟数据中提出真实生物学结论。
 
@@ -101,7 +101,7 @@ Rscript scripts/02_enrichment_demo.R
 
 注意：`gene_sets.csv` 是模拟注释。正式项目应换成目标物种的 GO、KEGG 或其他可靠注释。
 
-### 第五步：生成 QC 图和结果摘要
+### 第五步：生成样本检查图和结果摘要
 
 ```bash
 Rscript scripts/03_qc_and_summary.R
@@ -113,14 +113,6 @@ Rscript scripts/03_qc_and_summary.R
 - 样本相关性热图：检查同组重复是否更相似。
 - Top DEG 表：方便快速查看最显著的候选基因。
 - Markdown 结果摘要：把核心发现、局限性和下一步写成可阅读报告。
-
-### 第六步：生成 GitHub 预览用 SVG 图
-
-```bash
-Rscript scripts/04_make_github_svg_figures.R
-```
-
-这个脚本从结果表中生成轻量 SVG 图。SVG 是文本格式，适合在 GitHub README 中直接展示，也便于通过版本管理查看变化。
 
 ## 关键结果如何理解
 
@@ -160,24 +152,18 @@ results/
 ├── deg_results.csv
 ├── enrichment_results.csv
 ├── normalized_counts.csv
-├── sample_correlation_matrix.csv
-├── session_info.txt
-└── top_degs_for_review.csv
+└── sample_correlation_matrix.csv
 
 figures/
 ├── enrichment_barplot.png
-├── enrichment_barplot.svg
 ├── library_size_barplot.png
-├── library_size_barplot.svg
 ├── pca.png
-├── pca.svg
 ├── sample_correlation_heatmap.png
-├── sample_correlation_heatmap.svg
 ├── top_genes_heatmap.png
-├── top_genes_heatmap.svg
-├── volcano_plot.png
-└── volcano_plot.svg
+└── volcano_plot.png
 ```
+
+说明：GitHub 页面中展示的是对应的 SVG 预览图，核心分析逻辑仍然是上面的 R 脚本和结果表。
 
 预期现象：
 
@@ -196,7 +182,7 @@ figures/
 - 共测试 36 个模拟基因。
 - 使用 `padj < 0.05` 且 `|log2FoldChange| >= 1` 得到 15 个教学用 DEG。
 - stress 组上调基因 8 个，下调基因 7 个。
-- 教学用富集结果中，`Stress_response` 和 `Photosynthesis` 排名最靠前。
+- 教学用富集结果中，`Stress_response` 和 `Photosynthesis` 排名最靠前；这只是模拟注释下的练习结果。
 - PCA 和样本相关性热图均显示 control 与 stress 两组可以被明显区分。
 
 代表性图片：
@@ -214,8 +200,8 @@ figures/
 - RNA-seq 分析需要 count 矩阵和正确的样本分组信息。
 - 生物学重复是估计组内变异的基础。
 - 差异表达不仅看倍数变化，也要看统计显著性和多重检验校正。
-- PCA 用于观察样本整体结构，热图用于展示代表性基因的表达模式。
-- 富集分析的结论受背景基因集和注释质量影响。
+- PCA 用于观察样本整体结构，样本相关性用于检查重复是否合理。
+- 富集分析可以帮助从 DEG 走向功能解释，但结论受背景基因集和注释质量影响。
 - 可复现项目应同时保存代码、输入说明、软件版本、表格和图片。
 
 ## 局限性与下一步

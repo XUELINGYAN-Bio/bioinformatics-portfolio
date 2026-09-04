@@ -7,10 +7,7 @@ cat("R version:", R.version.string, "\n\n")
 required_packages <- c(
   "DESeq2",
   "ggplot2",
-  "pheatmap",
-  "dplyr",
-  "stringr",
-  "scales"
+  "pheatmap"
 )
 
 for (package_name in required_packages) {

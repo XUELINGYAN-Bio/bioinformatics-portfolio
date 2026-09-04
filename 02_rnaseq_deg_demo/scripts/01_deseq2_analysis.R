@@ -103,7 +103,21 @@ cat("Genes after filtering:", nrow(dds), "\n")
 # ----------------------------
 # 4. Fit the model and extract results
 # ----------------------------
-dds <- DESeq(dds, quiet = TRUE)
+dds <- tryCatch(
+  DESeq(dds, quiet = TRUE),
+  error = function(e) {
+    message(
+      "Standard DESeq2 dispersion fitting failed; ",
+      "using gene-wise dispersion estimates for this small teaching dataset."
+    )
+    message("Original DESeq2 error: ", conditionMessage(e))
+
+    dds_fallback <- estimateSizeFactors(dds)
+    dds_fallback <- estimateDispersionsGeneEst(dds_fallback, quiet = TRUE)
+    dispersions(dds_fallback) <- mcols(dds_fallback)$dispGeneEst
+    nbinomWaldTest(dds_fallback, quiet = TRUE)
+  }
+)
 
 res <- results(
   dds,
@@ -169,18 +183,22 @@ pca_plot <- ggplot(
   aes(x = PC1, y = PC2, color = condition, label = sample)
 ) +
   geom_point(size = 4) +
-  geom_text(vjust = -0.8, show.legend = FALSE) +
+  geom_text(vjust = -0.8, size = 3.6, show.legend = FALSE) +
+  scale_x_continuous(expand = expansion(mult = c(0.18, 0.25))) +
+  scale_y_continuous(expand = expansion(mult = 0.18)) +
+  coord_cartesian(clip = "off") +
   labs(
     title = "PCA of variance-stabilized counts",
     x = sprintf("PC1 (%.1f%%)", percent_variance[1]),
     y = sprintf("PC2 (%.1f%%)", percent_variance[2])
   ) +
-  theme_bw(base_size = 12)
+  theme_bw(base_size = 12) +
+  theme(plot.margin = margin(10, 30, 10, 30))
 
 ggsave(
   file.path(figures_dir, "pca.png"),
   pca_plot,
-  width = 7,
+  width = 8,
   height = 5,
   dpi = 300
 )
@@ -237,6 +255,9 @@ if (length(top_genes) >= 2) {
 
   annotation_col <- data.frame(condition = metadata$condition)
   rownames(annotation_col) <- rownames(metadata)
+  annotation_colors <- list(
+    condition = c("control" = "#F8766D", "stress" = "#00BFC4")
+  )
 
   png(
     file.path(figures_dir, "top_genes_heatmap.png"),
@@ -247,11 +268,13 @@ if (length(top_genes) >= 2) {
   pheatmap(
     heatmap_matrix,
     annotation_col = annotation_col,
+    annotation_colors = annotation_colors,
     main = "Top genes by adjusted p-value",
     border_color = NA,
     fontsize_row = 9
   )
   dev.off()
+
 }
 
 # ----------------------------
@@ -265,4 +288,3 @@ capture.output(
 cat("Significant up-regulated genes:", sum(deg_df$status == "Up"), "\n")
 cat("Significant down-regulated genes:", sum(deg_df$status == "Down"), "\n")
 cat("Analysis finished. See results/ and figures/.\n")
-
