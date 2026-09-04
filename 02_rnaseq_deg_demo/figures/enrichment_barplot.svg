@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img">
+<rect width="100%" height="100%" fill="white" />
+<style>text { font-family: Arial, Helvetica, sans-serif; }</style>
+<text x="450.00" y="38.00" text-anchor="middle" font-size="24" font-weight="700" fill="#222222">Teaching example: gene-set enrichment</text>
+<line x1="210.00" y1="75.00" x2="210.00" y2="450.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="210.00" y="478.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">0.0</text>
+<line x1="294.08" y1="75.00" x2="294.08" y2="450.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="294.08" y="478.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">0.5</text>
+<line x1="378.16" y1="75.00" x2="378.16" y2="450.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="378.16" y="478.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">1.0</text>
+<line x1="462.24" y1="75.00" x2="462.24" y2="450.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="462.24" y="478.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">1.5</text>
+<line x1="546.32" y1="75.00" x2="546.32" y2="450.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="546.32" y="478.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">2.0</text>
+<line x1="630.40" y1="75.00" x2="630.40" y2="450.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="630.40" y="478.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">2.5</text>
+<line x1="714.48" y1="75.00" x2="714.48" y2="450.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="714.48" y="478.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">3.0</text>
+<line x1="798.56" y1="75.00" x2="798.56" y2="450.00" stroke="#DDDDDD" stroke-width="1.00" />
+<text x="798.56" y="478.00" text-anchor="middle" font-size="12" font-weight="400" fill="#222222">3.5</text>
+<text x="192.00" y="420.00" text-anchor="end" font-size="15" font-weight="400" fill="#222222">Hormone_signaling</text>
+<rect x="210.00" y="380.00" width="14.37" height="70.00" fill="#08306B" stroke="none" stroke-width="0.00" />
+<text x="234.37" y="420.00" text-anchor="start" font-size="12" font-weight="400" fill="#222222">overlap=3</text>
+<text x="192.00" y="267.50" text-anchor="end" font-size="15" font-weight="400" fill="#222222">Photosynthesis</text>
+<rect x="210.00" y="227.50" width="324.88" height="70.00" fill="#4696DA" stroke="none" stroke-width="0.00" />
+<text x="544.88" y="267.50" text-anchor="start" font-size="12" font-weight="400" fill="#222222">overlap=7</text>
+<text x="192.00" y="115.00" text-anchor="end" font-size="15" font-weight="400" fill="#222222">Stress_response</text>
+<rect x="210.00" y="75.00" width="500.00" height="70.00" fill="#56B1F7" stroke="none" stroke-width="0.00" />
+<text x="720.00" y="115.00" text-anchor="start" font-size="12" font-weight="400" fill="#222222">overlap=8</text>
+<rect x="210.00" y="75.00" width="540.00" height="375.00" fill="none" stroke="#333333" stroke-width="1.50" />
+<text x="480.00" y="500.00" text-anchor="middle" font-size="16" font-weight="400" fill="#222222">-log10 adjusted p-value</text>
+<text x="28.00" y="262.50" text-anchor="middle" font-size="16" font-weight="400" fill="#222222" transform="rotate(-90 28.00 262.50)">Simulated gene set</text>
+</svg>
